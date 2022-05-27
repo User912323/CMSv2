@@ -1,49 +1,168 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>detail</title>
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/style.css">
+	<meta charset="ISO-8859-1">
+	<title>PixelTrice</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet"
+		  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+		  crossorigin="anonymous">
+
 </head>
 <body>
 <br>
-	<div class="banner-bootom-w3-agileits py-5">
-		<div class="container py-xl-4 py-lg-2">
-			<!-- tittle heading -->
-			<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
-				<span>I</span>mage
-				<span>D</span>etails</h3><br>
-			<!-- //tittle heading -->
-			<div class="row">
-				<div class="col-lg-5 col-md-8 single-right-left ">
-					<div class="grid images_3_of_2">
-						<div class="flexslider">
+<div class="banner-bootom-w3-agileits py-5">
+	<div class="container py-xl-4 py-lg-2">
+		<!-- tittle heading -->
+		<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
+			<span>I</span>mage
+			<span>D</span>etails</h3><br>
+		<!-- //tittle heading -->
+		<div class="row">
+			<div class="col-lg-5 col-md-8 single-right-left ">
+				<div class="grid images_3_of_2">
+					<div class="flexslider">
 						<div class="thumb-image">
-							<img th:src="@{${'/image/display/'+id}}" 
-							 class="img img-responsive img-fluid" alt=""> 
+							<img th:src="@{${'/image/display/data1/'+id}}" width="200px" height="200px"
+								 class="img img-responsive img-fluid" alt="Foto-1">
+							<br>
+							<img th:src="@{${'/image/display/data2/'+id}}" width="200px" height="200px"
+								 class="img img-responsive img-fluid" alt="Foto-2">
 						</div>
-							<div class="clearfix"></div>
-						</div>
+						<div class="clearfix"></div>
 					</div>
 				</div>
+			</div>
 
-				<div class="col-lg-7 single-right-left simpleCart_shelfItem">
-					Name: <span th:text="${name}" class="mb-3"></span>
-					<p class="mb-3">
-						Price :&#36; <span class="item_price" th:text="${price}"></span>
-					</p>
-					<div class="product-single-w3l">
-						Description: <span th:text="${description}" class="my-sm-4 my-3"> 
-						</span>
-					</div><br>
+<!--			<div class="col-lg-7 single-right-left simpleCart_shelfItem">-->
+<!--				Name: <span th:text="${username}" class="mb-3"></span>-->
+<!--				<p class="mb-3">-->
+<!--					Password :&#36; <span class="item_price" th:text="${password}"></span>-->
+<!--				</p>-->
+<!--				<div class="product-single-w3l">-->
+<!--					No_hp: <span th:text="${no_hp}" class="my-sm-4 my-3">-->
+<!--						</span>-->
+<!--				</div><br>-->
+<!--				<div class="product-single-w3l">-->
+<!--					file_id: <span th:text="${file_id}" class="my-sm-4 my-3">-->
+<!--						</span>-->
+<!--				</div><br>-->
+<!--				<div class="product-single-w3l">-->
+<!--					similariy: <span th:text="${similarity}" class="my-sm-4 my-3">-->
+<!--						</span>-->
+<!--				</div><br>-->
+
+<!--			<div class ="form-group">-->
+<!--				<label> Photo 1 </label>-->
+<!--				<input-->
+<!--						type = "file"-->
+<!--						name = "data"-->
+<!--						th:field = "*{data}"-->
+<!--						class = "form-control"-->
+<!--						placeholder="Enter Photo 1"-->
+<!--				/>-->
+<!--			</div>-->
+
+			<form th:action="@{${'/image/imageDetails/'+ id}}" th:object = "${imageGallery}" method="POST" enctype="multipart/form-data">
+			<div class ="form-group">
+				<label> Nama : </label>
+				<input
+						type = "text"
+						name = "username"
+						th:text = "${username}"
+						class = "form-control"
+						placeholder="Enter username"
+				/>
+			</div>
+
+			<div class ="form-group">
+				<label> Password </label>
+				<input
+						type = "text"
+						name = "password"
+						th:text="${password}"
+						class = "form-control"
+						placeholder="Enter password"
+				/>
+			</div> <br>
+
+			<div class ="form-group">
+				<label> No Hp </label>
+				<input
+						type = "text"
+						name = "no_hp"
+						th:text="${no_hp}"
+						class = "form-control"
+						placeholder="Enter no hp"
+				/>
+			</div> <br>
+
+			<div class ="form-group">
+				<label> File id </label>
+				<input
+						type = "text"
+						name = "file_id"
+						th:text="${file_id}"
+						class = "form-control"
+						placeholder="Enter File id"
+				/>
+			</div> <br>
+
+			<div class ="form-group">
+					<label> Similarity </label>
+					<input
+							type = "text"
+							name = "similarity"
+							th:text="${similarity}"
+							class = "form-control"
+							placeholder="Enter Similarity"
+					/>
+				</div> <br>
+
+				<div class ="form-group">-->
+					<label> Photo 1 </label>
+					<input type="file" class="form-control" placeholder="" name="file" id="file" required="required">
+
+				</div> <br>
+
+				<div class ="form-group">-->
+					<label> Photo 2 </label>
+					<input type="file" class="form-control" placeholder="" name="file2" id="file2" required="required">
+
+				</div> <br>
+
+
+				<!--				<div class ="form-group">&ndash;&gt;-->
+<!--					<label> Photo 2 </label>-->
+<!--					<input-->
+<!--							type = "file"-->
+<!--							name = "data2"-->
+<!--							th:field = "${data2}"-->
+<!--							class = "form-control"-->
+<!--							placeholder="Enter Photo 1"-->
+<!--					/>-->
+<!--				</div> <br>-->
+				<div class = "box-footer">
+					<button type="submit" class = "btn btn-primary">
+						Submit
+					</button>
+				</div> <br>
+
+				<div class = "box-footer">
+				<br>
 					<a href="/image/show">Go Back</a>
-					&emsp;<a href="/">Go Home</a>
+				&emsp;<a href="/">Go Home</a>
 				</div>
+
+			</form>
+
 			</div>
 		</div>
 	</div>
+</div>
 </body>
 </html>

@@ -28,5 +28,17 @@ public class ImageGalleryService {
 	public Optional<ImageGallery> getImageById(Long id) {
 		return imageGalleryRepository.findById(id);
 	}
+	public ImageGallery getImage(Long id) {
+		return imageGalleryRepository.findById(id).get();
+	}
+
+
+	public ImageGallery update(ImageGallery imageGallery) {
+		return imageGalleryRepository.save(imageGallery);
+	}
+	public void deleteById(Long id) {
+		imageGalleryRepository.deleteById(id);
+	}
+
 }
 
