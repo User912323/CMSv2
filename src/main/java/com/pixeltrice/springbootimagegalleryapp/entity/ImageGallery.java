@@ -35,6 +35,7 @@ public class ImageGallery {
 	private String username;
 	private String password;
 	private String no_hp;
+	private String status;
 
 	@Lob
 	private byte[] data2;
@@ -42,7 +43,7 @@ public class ImageGallery {
 	@Lob
 	private byte[] data;
 
-	public ImageGallery(String fileName, String fileType, byte[] data,byte[] data2, float similarity, String file_id, String path, String username, String password, String no_hp) {
+	public ImageGallery(String fileName, String fileType, byte[] data,byte[] data2, float similarity, String file_id, String path, String username, String password, String no_hp,String status) {
 		this.fileName = fileName;
 		this.fileType = fileType;
 		this.data = data;
@@ -53,6 +54,7 @@ public class ImageGallery {
 		this.username = username;
 		this.password = password;
 		this.no_hp = no_hp;
+		this.status = status;
 	}
    
 }

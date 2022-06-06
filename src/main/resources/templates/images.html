@@ -10,7 +10,7 @@
 </head>
 <body>
 <br>
-<h1 class="text-center">Spring Boot Image Gallery Application
+<h1 class="text-center">CMS
 </h1>
 <br><br>
 
@@ -25,7 +25,8 @@
                 <th>Password</th>
                 <th>No Hp</th>
                 <th>Similarity</th>
-
+                <th>status</th>
+                <th>verify</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -41,6 +42,11 @@
             <td th:text="${imageGallery.password}"></td>
                 <td th:text="${imageGallery.no_hp}"></td>
             <td th:text="${imageGallery.similarity}"></td>
+            <td th:text="${imageGallery.status}"></td>
+            <td>
+                <a th:href="@{${'/image/verify/'+ imageGallery.id}}" class="btn btn-success">Verify</a>
+                <a th:href="@{${'/image/verify2/'+ imageGallery.id}}" class="btn btn-danger">Not Verify</a>
+            </td>
 
             <!--                <td th:text="${#dates.format({imageGallery.createDate}, 'dd-MM-yyyy')}"/></td>-->
 <!--            <a th:href = "@{/students/edit/{id}(id=${student.id})}"-->
@@ -51,6 +57,7 @@
                    <a th:href = "@{${'/image/show/'+ imageGallery.id}}" class = "btn btn-danger">Delete</a>
                </td>
             </tr>
+
         </tbody>
     </table>
 

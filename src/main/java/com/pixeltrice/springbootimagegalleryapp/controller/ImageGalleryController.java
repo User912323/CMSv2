@@ -151,6 +151,7 @@ public class ImageGalleryController {
 
 		imageGalleryService.update(imageGallery1);
 
+
 		  return "redirect:/image/show";
 	}
 
@@ -159,6 +160,36 @@ public class ImageGalleryController {
 		imageGalleryService.deleteById(id);
 		return "redirect:/image/show";
 	}
+
+//	@GetMapping("/image/verify/{type}/{id}")
+//	public String verify(@PathVariable("id") Long id,@PathVariable("type") String type,HttpServletResponse response, Optional<ImageGallery> imageGallery)
+//			throws ServletException, IOException {
+//		imageGallery = imageGalleryService.getImageById(id);
+////		ImageGallery imageGallery = imageGallery1;
+//
+//		if(type.equalsIgnoreCase("verify1")){
+//			imageGallery.
+//			response.getOutputStream().close();
+//		}else{
+//			response.getOutputStream().write(imageGallery.get().getData2());
+//			response.getOutputStream().close();
+//		}
+//
+//		return "redirect:/image/show";
+//	}
+
+	@GetMapping("/image/verify/{id}")
+public String verify(@PathVariable Long id) {
+		imageGalleryService.updatea(id, "Verify");
+
+		return "redirect:/image/show";
+	}
+		@GetMapping("/image/verify2/{id}")
+		public String verify2(@PathVariable Long id)	{
+		imageGalleryService.updatea(id, "not Verify");
+
+			return "redirect:/image/show";
+		}
 //	@PostMapping("/image/{id}")
 //	public String updateStudent(@PathVariable Long id,
 //								@ModelAttribute("images") ImageGallery imageGallery,

@@ -40,5 +40,21 @@ public class ImageGalleryService {
 		imageGalleryRepository.deleteById(id);
 	}
 
+//	public ImageGallery verify(Long id)
+//	{
+////		return imageGalleryRepository.findById(id);
+//	}
+
+//public void updateC(Long id) {
+//	ImageGallery imageGallery = imageGalleryRepository.findId(id);
+//	imageGallery.setStatus("verify");
+//	imageGalleryRepository.save(imageGallery);
+//}
+
+	public void updatea(Long id, String status)
+	{
+		imageGalleryRepository.updatestatus(id,status);
+	}
+
 }
 
